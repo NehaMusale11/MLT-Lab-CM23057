@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TensorFlow.js Test</title>
+  <!-- Load TensorFlow.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body>
+  <h2>TensorFlow.js Installation Test</h2>
+  <script>
+    // Create two tensors
+    const a = tf.tensor([1, 2, 3, 4]);
+    const b = tf.tensor([10, 20, 30, 40]);
+
+    // Perform addition
+    const result = tf.add(a, b);
+
+    // Print results
+    result.print(); // prints [11, 22, 33, 44] to console
+  </script>
+</body>
+</html>
