@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 2 - Test 5 Images</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef5ff;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        select, button {
+            padding: 8px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d47a1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>MobileNet - 5 Image Testing</h2>
+
+    <p id="status">Loading Model...</p>
+
+    <select id="imageSelect" onchange="changeImage()">
+        <option value="banana.jpg">Banana</option>
+        <option value="car.jpg">Car</option>
+        <option value="cat.jpg">Cat</option>
+        <option value="dog.jpg">Dog</option>
+        <option value="laptop.jpg">Laptop</option>
+    </select>
+
+    <br>
+
+    <img id="image" src="images/banana.jpg" width="300">
+
+    <br>
+
+    <button onclick="classifyImage()">Classify</button>
+
+    <h3>Top 3 Predictions:</h3>
+    <ul id="result"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MobileNet Comparison</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            width: 850px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        select, button {
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #5a67d8;
+            transform: scale(1.05);
+        }
+
+        img {
+            margin-top: 15px;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .results {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .box {
+            width: 45%;
+            background: #f7f9ff;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .speed {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        #status {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h2>🚀 MobileNet V1 vs V2 Comparison</h2>
+    <p id="status">Loading Models...</p>
+
+    <select id="imageSelect" onchange="changeImage()">
+        <option value="banana.jpg">Banana</option>
+        <option value="car.jpg">Car</option>
+        <option value="cat.jpg">Cat</option>
+        <option value="dog.jpg">Dog</option>
+        <option value="laptop.jpg">Laptop</option>
+    </select>
+
+    <br>
+    <img id="image" src="images/banana.jpg">
+
+    <br>
+    <button onclick="compareModels()">Compare Models</button>
+
+    <div class="results">
+
+        <div class="box">
+            <h3>MobileNet V1</h3>
+            <ul id="resultV1"></ul>
+            <div class="speed" id="speedV1"></div>
+        </div>
+
+        <div class="box">
+            <h3>MobileNet V2</h3>
+            <ul id="resultV2"></ul>
+            <div class="speed" id="speedV2"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

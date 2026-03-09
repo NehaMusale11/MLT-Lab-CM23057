@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classification - MobileNet</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Image Classification</h1>
+    <p class="subtitle">Using Pre-trained MobileNet Model</p>
+
+    <div class="card">
+
+        <p id="status" class="status">Loading Model...</p>
+
+        <img id="image" src="../images/cat.jpg" class="image">
+
+        <button onclick="classifyImage()" class="btn">
+            Classify Image
+        </button>
+
+        <h3>Top 3 Predictions</h3>
+        <ul id="result" class="result"></ul>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

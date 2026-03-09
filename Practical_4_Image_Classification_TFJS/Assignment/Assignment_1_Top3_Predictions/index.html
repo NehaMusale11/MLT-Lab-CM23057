@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 1 - Top 3 Predictions (Dog)</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f8ff;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d47a1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Top 3 Predictions - Dog Image</h2>
+
+    <p id="status">Loading Model...</p>
+
+    <img id="image" src="images/dog.jpg" width="300">
+
+    <br><br>
+
+    <button onclick="classifyImage()">Classify</button>
+
+    <h3>Results:</h3>
+    <ul id="result"></ul>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
